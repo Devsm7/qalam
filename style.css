@@ -1,7 +1,8 @@
 :root {
     --bg-color: #E5CEA9;
     --text-color: #342000;
-    --accent-color: #5D4037; /* Darker brown for contrast */
+    --accent-color: #5D4037;
+    /* Darker brown for contrast */
     --light-accent: #F5E6D3;
     --white: #FFFFFF;
     --transition: all 0.3s ease;
@@ -27,7 +28,10 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--font-heading);
     font-weight: 700;
 }
@@ -106,7 +110,8 @@ img {
 
 .logo img {
     height: 50px;
-    border-radius: 50%; /* Optional: if logo needs to be circular */
+    border-radius: 50%;
+    /* Optional: if logo needs to be circular */
 }
 
 .nav-links {
@@ -361,6 +366,7 @@ img {
     border-radius: 50%;
     margin: 0 auto 20px;
     border: 3px solid var(--text-color);
+    object-fit: cover;
 }
 
 .team-member h3 {
@@ -382,7 +388,8 @@ img {
 .download-section {
     padding: 100px 0;
     text-align: center;
-    background: linear-gradient(rgba(229, 206, 169, 0.8), rgba(229, 206, 169, 0.8)), url('assets/pattern.png'); /* Optional pattern */
+    background: linear-gradient(rgba(229, 206, 169, 0.8), rgba(229, 206, 169, 0.8)), url('assets/pattern.png');
+    /* Optional pattern */
 }
 
 .download-content h2 {
@@ -440,7 +447,8 @@ footer {
 .footer-logo img {
     height: 60px;
     margin-bottom: 20px;
-    filter: brightness(0) invert(1); /* Make logo white if needed, or keep original if it contrasts well */
+    filter: brightness(0) invert(1);
+    /* Make logo white if needed, or keep original if it contrasts well */
 }
 
 .footer-logo img {
@@ -453,7 +461,8 @@ footer {
     border-radius: 8px;
 }
 
-.footer-links h4, .footer-social h4 {
+.footer-links h4,
+.footer-social h4 {
     margin-bottom: 20px;
     font-family: var(--font-heading);
     font-size: 1.5rem;
@@ -487,8 +496,13 @@ footer {
     animation: fadeInUp 0.8s forwards;
 }
 
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
 
 @keyframes fadeInUp {
     to {
@@ -497,15 +511,29 @@ footer {
     }
 }
 
-.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-up {
+.scroll-reveal,
+.scroll-reveal-left,
+.scroll-reveal-right,
+.scroll-reveal-up {
     opacity: 0;
     transition: all 1s ease;
 }
 
-.scroll-reveal { transform: translateY(30px); }
-.scroll-reveal-left { transform: translateX(-50px); }
-.scroll-reveal-right { transform: translateX(50px); }
-.scroll-reveal-up { transform: translateY(50px); }
+.scroll-reveal {
+    transform: translateY(30px);
+}
+
+.scroll-reveal-left {
+    transform: translateX(-50px);
+}
+
+.scroll-reveal-right {
+    transform: translateX(50px);
+}
+
+.scroll-reveal-up {
+    transform: translateY(50px);
+}
 
 .active {
     opacity: 1;
@@ -514,7 +542,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
     .nav-links {
         position: fixed;
         top: 80px;
@@ -524,31 +555,57 @@ footer {
         width: 100%;
         padding: 40px;
         transition: 0.3s;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
-    .nav-links.active { right: 0; }
-    .hamburger { display: block; }
-    
-    .feature-row, .feature-row.reverse {
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .feature-row,
+    .feature-row.reverse {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .feature-list li {
         display: inline-block;
         margin: 0 10px;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .social-icons {
         justify-content: center;
     }
-    
+
     .stats-grid {
         gap: 40px;
     }
+}
+
+/* LinkedIn Icon Styles */
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.linkedin-link svg {
+    fill: currentColor;
+}
+
+.feature-image img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
