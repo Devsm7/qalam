@@ -144,6 +144,79 @@ img {
     transition: var(--transition);
 }
 
+/* Language Toggle Button */
+.language-btn {
+    background: transparent;
+    border: 2px solid var(--text-color);
+    border-radius: 50px;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.language-btn:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.language-btn svg {
+    transition: var(--transition);
+}
+
+.language-btn:hover svg {
+    transform: rotate(180deg);
+}
+
+/* RTL Support for Arabic */
+html[dir="rtl"] {
+    direction: rtl;
+}
+
+html[dir="rtl"] body {
+    font-family: var(--font-heading), var(--font-body);
+}
+
+html[dir="rtl"] .nav-links {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .feature-list li {
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+html[dir="rtl"] .feature-list li::before {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .scroll-reveal-left {
+    transform: translateX(50px);
+}
+
+html[dir="rtl"] .scroll-reveal-right {
+    transform: translateX(-50px);
+}
+
+html[dir="rtl"] .btn-download .text {
+    align-items: flex-end;
+}
+
+html[dir="rtl"] .footer-content {
+    direction: rtl;
+}
+
+html[dir="rtl"] .social-icons {
+    flex-direction: row-reverse;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -382,6 +455,14 @@ img {
     color: var(--accent-color);
     font-weight: 600;
     font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.linkedin-link svg {
+    fill: currentColor;
 }
 
 /* Download Section */
@@ -447,15 +528,6 @@ footer {
 .footer-logo img {
     height: 60px;
     margin-bottom: 20px;
-    filter: brightness(0) invert(1);
-    /* Make logo white if needed, or keep original if it contrasts well */
-}
-
-.footer-logo img {
-    /* If the logo is dark, we might need to adjust it for the dark footer. 
-       Assuming the logo provided is dark on light. 
-       Let's try to invert it or put it in a white circle if needed.
-       For now, let's assume it needs a background or inversion. */
     background: var(--bg-color);
     padding: 5px;
     border-radius: 8px;
@@ -540,6 +612,13 @@ footer {
     transform: translate(0);
 }
 
+.feature-image img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero h1 {
@@ -589,23 +668,4 @@ footer {
     .stats-grid {
         gap: 40px;
     }
-}
-
-/* LinkedIn Icon Styles */
-.linkedin-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.linkedin-link svg {
-    fill: currentColor;
-}
-
-.feature-image img {
-    max-width: 300px;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }

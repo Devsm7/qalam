@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -22,11 +22,21 @@
                 <img src="assets/logo.jpg" alt="Qalam Logo">
             </a>
             <ul class="nav-links">
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#features">What We Do</a></li>
-                <li><a href="#unique">Why Qalam</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#download" class="btn-primary">Download App</a></li>
+                <li><a href="#vision" data-i18n="nav_vision">Vision</a></li>
+                <li><a href="#features" data-i18n="nav_features">What We Do</a></li>
+                <li><a href="#unique" data-i18n="nav_unique">Why Qalam</a></li>
+                <li><a href="#team" data-i18n="nav_team">Team</a></li>
+                <li><a href="#download" class="btn-primary" data-i18n="nav_download">Download App</a></li>
+                <li>
+                    <button id="language-toggle" class="language-btn" aria-label="Switch Language">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+                        </svg>
+                        <span id="lang-text">عربي</span>
+                    </button>
+                </li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -38,12 +48,13 @@
 
     <header class="hero">
         <div class="container hero-content">
-            <h1 class="fade-in-up">Bridging Arabic Calligraphy and Technology in a Unique Way</h1>
-            <p class="fade-in-up delay-1">A digital sanctuary for Arabic calligraphy enthusiasts. Identify, learn, and
-                appreciate the timeless beauty of Arabic Calligraphy.</p>
+            <h1 class="fade-in-up" data-i18n="hero_title">Bridging Arabic Calligraphy and Technology in a Unique Way
+            </h1>
+            <p class="fade-in-up delay-1" data-i18n="hero_subtitle">A digital sanctuary for Arabic calligraphy
+                enthusiasts. Identify, learn, and appreciate the timeless beauty of Arabic Calligraphy.</p>
             <div class="hero-btns fade-in-up delay-2">
-                <a href="#download" class="btn-primary">Get Started</a>
-                <a href="#vision" class="btn-secondary">Learn More</a>
+                <a href="#download" class="btn-primary" data-i18n="hero_btn_start">Get Started</a>
+                <a href="#vision" class="btn-secondary" data-i18n="hero_btn_learn">Learn More</a>
             </div>
         </div>
         <div class="hero-overlay"></div>
@@ -52,26 +63,27 @@
     <section id="vision" class="vision-section">
         <div class="container">
             <div class="section-header">
-                <span class="subtitle">Our Vision</span>
-                <h2>Preserving Heritage Through Innovation</h2>
+                <span class="subtitle" data-i18n="vision_subtitle">Our Vision</span>
+                <h2 data-i18n="vision_title">Preserving Heritage Through Innovation</h2>
             </div>
             <div class="vision-grid">
                 <div class="vision-card scroll-reveal">
                     <div class="icon">🌍</div>
-                    <h3>Art for everyone</h3>
-                    <p>Make Arabic calligraphy accessible to everyone, everywhere through the power of modern
-                        technology.</p>
+                    <h3 data-i18n="vision_card1_title">Art for everyone</h3>
+                    <p data-i18n="vision_card1_text">Make Arabic calligraphy accessible to everyone, everywhere through
+                        the power of modern technology.</p>
                 </div>
                 <div class="vision-card scroll-reveal delay-1">
                     <div class="icon">🤖</div>
-                    <h3>AI powered</h3>
-                    <p>Preserve cultural heritage by utilizing advanced AI to recognize and interpret calligraphy
-                        styles.</p>
+                    <h3 data-i18n="vision_card2_title">AI powered</h3>
+                    <p data-i18n="vision_card2_text">Preserve cultural heritage by utilizing advanced AI to recognize
+                        and interpret calligraphy styles.</p>
                 </div>
                 <div class="vision-card scroll-reveal delay-2">
                     <div class="icon">🤝</div>
-                    <h3>Community Driven</h3>
-                    <p>Build a vibrant community where calligraphers and admirers connect, share, and grow together.</p>
+                    <h3 data-i18n="vision_card3_title">Community Driven</h3>
+                    <p data-i18n="vision_card3_text">Build a vibrant community where calligraphers and admirers connect,
+                        share, and grow together.</p>
                 </div>
             </div>
         </div>
@@ -80,54 +92,36 @@
     <section id="features" class="features-section">
         <div class="container">
             <div class="section-header">
-                <span class="subtitle">What We Do</span>
-                <h2>Empowering The Art of The Pen</h2>
+                <span class="subtitle" data-i18n="features_subtitle">What We Do</span>
+                <h2 data-i18n="features_title">Empowering The Art of The Pen</h2>
             </div>
 
             <div class="feature-row">
                 <div class="feature-text scroll-reveal-left">
-                    <h3>Hebr AI - Arabic Calligraphy Recognizer</h3>
-                    <p>Upload any calligraphy image and let Hebr AI identify the type, style. It's
-                        like having an expert curator in your pocket.</p>
+                    <h3 data-i18n="feature1_title">Hebr AI - Arabic Calligraphy Recognizer</h3>
+                    <p data-i18n="feature1_text">Upload any calligraphy image and let Hebr AI identify the type, style.
+                        It's like having an expert curator in your pocket.</p>
                     <ul class="feature-list">
-                        <li>Instant Style Identification</li>
-                        <li>Text Reading & Translation</li>
+                        <li data-i18n="feature1_list1">Instant Style Identification</li>
+                        <li data-i18n="feature1_list2">Text Reading & Translation</li>
                     </ul>
                 </div>
                 <div class="feature-image scroll-reveal-right">
-                    <!-- Placeholder for AI Feature visualization -->
                     <img src="assets/ai_feature_mk.png" alt="AI Scanner Visualization">
                 </div>
             </div>
 
             <div class="feature-row reverse">
                 <div class="feature-text scroll-reveal-right">
-                    <h3>Artist Marketplace</h3>
-                    <p>A dedicated space for calligraphers to thrive. Sell your masterpieces, showcase your portfolio,
-                        and receive custom commissions from admirers.</p>
+                    <h3 data-i18n="feature3_title">Community</h3>
+                    <p data-i18n="feature3_text">Whether you are a beginner or a master, Qalam is your home. Explore
+                        styles, connect with artists.</p>
                     <ul class="feature-list">
-                        <li>Sell High-Res Artwork</li>
-                        <li>Portfolio Showcase</li>
+                        <li data-i18n="feature3_list1">Explore Styles</li>
+                        <li data-i18n="feature3_list2">Engage with Artists</li>
                     </ul>
                 </div>
                 <div class="feature-image scroll-reveal-left">
-                    <!-- Placeholder for Marketplace visualization -->
-                    <div class="placeholder-img">Marketplace Interface</div>
-                </div>
-            </div>
-
-            <div class="feature-row">
-                <div class="feature-text scroll-reveal-left">
-                    <h3>Community</h3>
-                    <p>Whether you are a beginner or a master, Qalam is your home. Explore styles,
-                        connect with artists.</p>
-                    <ul class="feature-list">
-                        <li>Explore Styles</li>
-                        <li>Engage with Artists</li>
-                    </ul>
-                </div>
-                <div class="feature-image scroll-reveal-right">
-                    <!-- Placeholder for Community visualization -->
                     <img src="assets/community_mk.png" alt="Community Feed">
                 </div>
             </div>
@@ -137,17 +131,17 @@
     <section id="unique" class="unique-section">
         <div class="container">
             <div class="unique-content scroll-reveal-up">
-                <h2>Why Qalam Is Unique</h2>
-                <p class="large-text">The first platform combining AI with the tradition of
+                <h2 data-i18n="unique_title">Why Qalam Is Unique</h2>
+                <p class="large-text" data-i18n="unique_text">The first platform combining AI with the tradition of
                     Arabic calligraphy.</p>
                 <div class="stats-grid">
                     <div class="stat-item">
                         <span class="number">1st</span>
-                        <span class="label">AI Platform for Arabic Calligraphy</span>
+                        <span class="label" data-i18n="unique_stat1_label">AI Platform for Arabic Calligraphy</span>
                     </div>
                     <div class="stat-item">
                         <span class="number">30+</span>
-                        <span class="label">Styles to Explore</span>
+                        <span class="label" data-i18n="unique_stat2_label">Styles to Explore</span>
                     </div>
                 </div>
             </div>
@@ -157,15 +151,14 @@
     <section id="team" class="team-section">
         <div class="container">
             <div class="section-header">
-                <span class="subtitle">Who We Are</span>
-                <h2>Meet the Team</h2>
+                <span class="subtitle" data-i18n="team_subtitle">Who We Are</span>
+                <h2 data-i18n="team_title">Meet the Team</h2>
             </div>
             <div class="team-grid">
-                <!-- Placeholder Team Members -->
                 <div class="team-member scroll-reveal">
                     <img src="assets/alsarra.png" alt="PhD.Sultan Alsarra" class="member-photo">
                     <h3>PhD.Sultan Alsarra</h3>
-                    <p>Mentor</p>
+                    <p data-i18n="team_role_mentor">Mentor</p>
                     <a href="https://www.linkedin.com/in/sultan-alsarra-phd-56977a63/" class="linkedin-link"
                         target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -173,13 +166,13 @@
                             <path
                                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
-                        LinkedIn
+                        <span data-i18n="team_linkedin">LinkedIn</span>
                     </a>
                 </div>
                 <div class="team-member scroll-reveal">
                     <img src="assets/ProfileImage.png" alt="Ahmad Alismaeil" class="member-photo">
                     <h3>Ahmad Alismaeil</h3>
-                    <p>Product Owner</p>
+                    <p data-i18n="team_role_po">Product Owner</p>
                     <a href="https://www.linkedin.com/in/ahmad-lsmaeil-92a9b4247/" class="linkedin-link" target="_blank"
                         rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -187,13 +180,13 @@
                             <path
                                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
-                        LinkedIn
+                        <span data-i18n="team_linkedin">LinkedIn</span>
                     </a>
                 </div>
                 <div class="team-member scroll-reveal">
                     <img src="assets/alzahrani.png" alt="Bader Alzahrani" class="member-photo">
                     <h3>Bader Alzahrani</h3>
-                    <p>Scrum Master</p>
+                    <p data-i18n="team_role_sm">Scrum Master</p>
                     <a href="https://www.linkedin.com/in/badermalzahrani/" class="linkedin-link" target="_blank"
                         rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -201,13 +194,13 @@
                             <path
                                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
-                        LinkedIn
+                        <span data-i18n="team_linkedin">LinkedIn</span>
                     </a>
                 </div>
                 <div class="team-member scroll-reveal">
                     <img src="assets/alburaidi.png" alt="Bader Alburaidi" class="member-photo">
                     <h3>Bader Alburaidi</h3>
-                    <p>Frontend Developer</p>
+                    <p data-i18n="team_role_frontend">Frontend Developer</p>
                     <a href="https://www.linkedin.com/in/bader-alburaidi-92b9aa387/" class="linkedin-link"
                         target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -215,13 +208,13 @@
                             <path
                                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
-                        LinkedIn
+                        <span data-i18n="team_linkedin">LinkedIn</span>
                     </a>
                 </div>
                 <div class="team-member scroll-reveal">
                     <img src="assets/alzamil.png" alt="Mohammd Alzamil" class="member-photo">
                     <h3>Mohammd Alzamil</h3>
-                    <p>Backend Developer</p>
+                    <p data-i18n="team_role_backend">Backend Developer</p>
                     <a href="https://www.linkedin.com/in/mohammd-alzamil-511935365/" class="linkedin-link"
                         target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -229,13 +222,13 @@
                             <path
                                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
-                        LinkedIn
+                        <span data-i18n="team_linkedin">LinkedIn</span>
                     </a>
                 </div>
                 <div class="team-member scroll-reveal delay-1">
                     <img src="assets/sulaiman.png" alt="Sulaiman Mokhaniq" class="member-photo">
                     <h3>Sulaiman Mokhaniq</h3>
-                    <p>Flutter Developer</p>
+                    <p data-i18n="team_role_flutter">Flutter Developer</p>
                     <a href="https://www.linkedin.com/in/sulaiman-mokhaniq/" class="linkedin-link" target="_blank"
                         rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -243,13 +236,13 @@
                             <path
                                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
-                        LinkedIn
+                        <span data-i18n="team_linkedin">LinkedIn</span>
                     </a>
                 </div>
                 <div class="team-member scroll-reveal delay-2">
                     <img src="assets/abdullah.png" alt="Abdullah Alyousef" class="member-photo">
                     <h3>Abdullah Alyousef</h3>
-                    <p>Backend Developer</p>
+                    <p data-i18n="team_role_backend">Backend Developer</p>
                     <a href="https://www.linkedin.com/in/abdullah-alyousef-83b146321/" class="linkedin-link"
                         target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -257,7 +250,7 @@
                             <path
                                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
-                        LinkedIn
+                        <span data-i18n="team_linkedin">LinkedIn</span>
                     </a>
                 </div>
             </div>
@@ -266,15 +259,15 @@
 
     <section id="download" class="download-section">
         <div class="container download-content">
-            <h2 class="scroll-reveal-up">Ready to Explore?</h2>
-            <p class="scroll-reveal-up delay-1">Download Qalam today and start your journey into the world of Arabic
-                calligraphy.</p>
+            <h2 class="scroll-reveal-up" data-i18n="download_title">Ready to Explore?</h2>
+            <p class="scroll-reveal-up delay-1" data-i18n="download_text">Download Qalam today and start your journey
+                into the world of Arabic calligraphy.</p>
             <div class="download-buttons scroll-reveal-up delay-2">
                 <a href="#" class="btn-download">
                     <span class="icon">⬇️</span>
                     <span class="text">
-                        <small>Download APK</small>
-                        Android Version
+                        <small data-i18n="download_btn_small">Download APK</small>
+                        <span data-i18n="download_btn_large">Android Version</span>
                     </span>
                 </a>
             </div>
@@ -285,27 +278,20 @@
         <div class="container footer-content">
             <div class="footer-logo">
                 <img src="assets/logo.jpg" alt="Qalam Logo">
-                <p>Where artistry, technology, and community come together to keep the pen alive.</p>
+                <p data-i18n="footer_tagline">Where artistry, technology, and community come together to keep the pen
+                    alive.</p>
             </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h4 data-i18n="footer_quick_links">Quick Links</h4>
                 <ul>
-                    <li><a href="#vision">Vision</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a href="#vision" data-i18n="footer_link_vision">Vision</a></li>
+                    <li><a href="#features" data-i18n="footer_link_features">Features</a></li>
+                    <li><a href="#team" data-i18n="footer_link_team">Team</a></li>
                 </ul>
-            </div>
-            <div class="footer-social">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">LinkedIn</a>
-                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Qalam. All rights reserved.</p>
+            <p data-i18n="footer_copyright">© 2025 Qalam. All rights reserved.</p>
         </div>
     </footer>
 

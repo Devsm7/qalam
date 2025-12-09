@@ -69,7 +69,7 @@ const translations = {
         footer_copyright: "© 2025 Qalam. All rights reserved.",
         footer_link_vision: "Vision",
         footer_link_features: "Features",
-        footer_link_team: "Team"
+        footer_link_team: "Team",
     },
     ar: {
         // Navigation
@@ -81,7 +81,7 @@ const translations = {
 
         // Hero Section
         hero_title: "ربط الخط العربي بالتكنولوجيا بطريقة فريدة",
-        hero_subtitle: "ملاذ رقمي لعشاق الخط العربي.",
+        hero_subtitle: "ملاذ رقمي لعشاق الخط العربي. تعرّف على جمال الخط العربي.",
         hero_btn_start: "ابدأ الآن",
         hero_btn_learn: "اعرف المزيد",
 
@@ -126,7 +126,7 @@ const translations = {
         team_role_frontend: "frontend developer",
         team_role_backend: "backend developer",
         team_role_flutter: "flutter developer",
-        team_linkedin: "linkedin",
+        team_linkedin: "لينكد إن",
 
         // Download Section
         download_title: "مستعد للاستكشاف؟",
@@ -140,183 +140,11 @@ const translations = {
         footer_copyright: "© 2025 قلم. جميع الحقوق محفوظة.",
         footer_link_vision: "الرؤية",
         footer_link_features: "الميزات",
-        footer_link_team: "الفريق"
+        footer_link_team: "الفريق",
     }
 };
 
-// Current language state
-let currentLang = localStorage.getItem('qalamLang') || 'en';
-
-// Function to switch language
-function switchLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('qalamLang', lang);
-
-    const htmlElement = document.documentElement;
-    htmlElement.setAttribute('lang', lang);
-    htmlElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
-    // Update language toggle button text
-    const langText = document.getElementById('lang-text');
-    if (langText) {
-        langText.textContent = lang === 'en' ? 'عربي' : 'English';
-    }
-
-    // Apply translations
-    applyTranslations(lang);
+// Export for use in main.js
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = translations;
 }
-
-// Function to apply translations to the page
-function applyTranslations(lang) {
-    const t = translations[lang];
-
-    // Navigation
-    updateText('[data-i18n="nav_vision"]', t.nav_vision);
-    updateText('[data-i18n="nav_features"]', t.nav_features);
-    updateText('[data-i18n="nav_unique"]', t.nav_unique);
-    updateText('[data-i18n="nav_team"]', t.nav_team);
-    updateText('[data-i18n="nav_download"]', t.nav_download);
-
-    // Hero Section
-    updateText('[data-i18n="hero_title"]', t.hero_title);
-    updateText('[data-i18n="hero_subtitle"]', t.hero_subtitle);
-    updateText('[data-i18n="hero_btn_start"]', t.hero_btn_start);
-    updateText('[data-i18n="hero_btn_learn"]', t.hero_btn_learn);
-
-    // Vision Section
-    updateText('[data-i18n="vision_subtitle"]', t.vision_subtitle);
-    updateText('[data-i18n="vision_title"]', t.vision_title);
-    updateText('[data-i18n="vision_card1_title"]', t.vision_card1_title);
-    updateText('[data-i18n="vision_card1_text"]', t.vision_card1_text);
-    updateText('[data-i18n="vision_card2_title"]', t.vision_card2_title);
-    updateText('[data-i18n="vision_card2_text"]', t.vision_card2_text);
-    updateText('[data-i18n="vision_card3_title"]', t.vision_card3_title);
-    updateText('[data-i18n="vision_card3_text"]', t.vision_card3_text);
-
-    // Features Section
-    updateText('[data-i18n="features_subtitle"]', t.features_subtitle);
-    updateText('[data-i18n="features_title"]', t.features_title);
-    updateText('[data-i18n="feature1_title"]', t.feature1_title);
-    updateText('[data-i18n="feature1_text"]', t.feature1_text);
-    updateText('[data-i18n="feature1_list1"]', t.feature1_list1);
-    updateText('[data-i18n="feature1_list2"]', t.feature1_list2);
-    updateText('[data-i18n="feature2_title"]', t.feature2_title);
-    updateText('[data-i18n="feature2_text"]', t.feature2_text);
-    updateText('[data-i18n="feature2_list1"]', t.feature2_list1);
-    updateText('[data-i18n="feature2_list2"]', t.feature2_list2);
-    updateText('[data-i18n="feature3_title"]', t.feature3_title);
-    updateText('[data-i18n="feature3_text"]', t.feature3_text);
-    updateText('[data-i18n="feature3_list1"]', t.feature3_list1);
-    updateText('[data-i18n="feature3_list2"]', t.feature3_list2);
-
-    // Unique Section
-    updateText('[data-i18n="unique_title"]', t.unique_title);
-    updateText('[data-i18n="unique_text"]', t.unique_text);
-    updateText('[data-i18n="unique_stat1_label"]', t.unique_stat1_label);
-    updateText('[data-i18n="unique_stat2_label"]', t.unique_stat2_label);
-
-    // Team Section
-    updateText('[data-i18n="team_subtitle"]', t.team_subtitle);
-    updateText('[data-i18n="team_title"]', t.team_title);
-    updateText('[data-i18n="team_role_mentor"]', t.team_role_mentor);
-    updateText('[data-i18n="team_role_po"]', t.team_role_po);
-    updateText('[data-i18n="team_role_sm"]', t.team_role_sm);
-    updateText('[data-i18n="team_role_frontend"]', t.team_role_frontend);
-    updateText('[data-i18n="team_role_backend"]', t.team_role_backend);
-    updateText('[data-i18n="team_role_flutter"]', t.team_role_flutter);
-    updateTextAll('[data-i18n="team_linkedin"]', t.team_linkedin);
-
-    // Download Section
-    updateText('[data-i18n="download_title"]', t.download_title);
-    updateText('[data-i18n="download_text"]', t.download_text);
-    updateText('[data-i18n="download_btn_small"]', t.download_btn_small);
-    updateText('[data-i18n="download_btn_large"]', t.download_btn_large);
-
-    // Footer
-    updateText('[data-i18n="footer_tagline"]', t.footer_tagline);
-    updateText('[data-i18n="footer_quick_links"]', t.footer_quick_links);
-    updateText('[data-i18n="footer_copyright"]', t.footer_copyright);
-    updateText('[data-i18n="footer_link_vision"]', t.footer_link_vision);
-    updateText('[data-i18n="footer_link_features"]', t.footer_link_features);
-    updateText('[data-i18n="footer_link_team"]', t.footer_link_team);
-}
-
-// Helper function to update text content
-function updateText(selector, text) {
-    const element = document.querySelector(selector);
-    if (element) {
-        element.textContent = text;
-    }
-}
-
-// Helper function to update all matching elements
-function updateTextAll(selector, text) {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach(el => {
-        el.textContent = text;
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize language
-    switchLanguage(currentLang);
-
-    // Language toggle button
-    const languageToggle = document.getElementById('language-toggle');
-    if (languageToggle) {
-        languageToggle.addEventListener('click', () => {
-            const newLang = currentLang === 'en' ? 'ar' : 'en';
-            switchLanguage(newLang);
-        });
-    }
-
-    // Mobile Menu
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
-    }
-
-    // Scroll Animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
-
-    const animatedElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-up');
-    animatedElements.forEach(el => observer.observe(el));
-
-    // Smooth Scroll for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
