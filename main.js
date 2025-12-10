@@ -120,7 +120,7 @@ const translations = {
 
         // Unique Section
         unique_title: "لماذا منصة قلم فريدة",
-        unique_text: "أول منصة تجمع بين الذكاء الاصطناعي الخط العربي.",
+        unique_text: "أول منصة تجمع بين الذكاء الاصطناعي و الخط العربي.",
         unique_stat1_label: "منصة ذكاء اصطناعي للخط العربي",
         unique_stat2_label: "أسلوب للتعرف عليه",
 
