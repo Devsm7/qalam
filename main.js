@@ -49,6 +49,13 @@ const translations = {
         // Team Section
         team_subtitle: "Who We Are",
         team_title: "Meet the Team",
+        team_member1_name: "PhD.Sultan Alsarra",
+        team_member2_name: "Ahmad Alismaeil",
+        team_member3_name: "Bader Alzahrani",
+        team_member4_name: "Bader Alburaidi",
+        team_member5_name: "Mohammd Alzamil",
+        team_member6_name: "Sulaiman Mokhaniq",
+        team_member7_name: "Abdullah Alyousef",
         team_role_mentor: "Mentor",
         team_role_po: "Product Owner",
         team_role_sm: "Scrum Master",
@@ -120,6 +127,13 @@ const translations = {
         // Team Section
         team_subtitle: "من نحن",
         team_title: "تعرف على الفريق",
+        team_member1_name: "د. سلطان السراء",
+        team_member2_name: "أحمد السماعيل",
+        team_member3_name: "بدر الزهراني",
+        team_member4_name: "بدر البريدي",
+        team_member5_name: "محمد الزامل",
+        team_member6_name: "سليمان مخانق",
+        team_member7_name: "عبدالله اليوسف",
         team_role_mentor: "mentor",
         team_role_po: "product owner",
         team_role_sm: "scrum master",
@@ -218,6 +232,13 @@ function applyTranslations(lang) {
     // Team Section
     updateText('[data-i18n="team_subtitle"]', t.team_subtitle);
     updateText('[data-i18n="team_title"]', t.team_title);
+    updateText('[data-i18n="team_member1_name"]', t.team_member1_name);
+    updateText('[data-i18n="team_member2_name"]', t.team_member2_name);
+    updateText('[data-i18n="team_member3_name"]', t.team_member3_name);
+    updateText('[data-i18n="team_member4_name"]', t.team_member4_name);
+    updateText('[data-i18n="team_member5_name"]', t.team_member5_name);
+    updateText('[data-i18n="team_member6_name"]', t.team_member6_name);
+    updateText('[data-i18n="team_member7_name"]', t.team_member7_name);
     updateText('[data-i18n="team_role_mentor"]', t.team_role_mentor);
     updateText('[data-i18n="team_role_po"]', t.team_role_po);
     updateText('[data-i18n="team_role_sm"]', t.team_role_sm);
