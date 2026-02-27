@@ -125,7 +125,7 @@ const ROBOFLOW_MODEL = "khatclass";
 const ROBOFLOW_VERSION = "1";
 const ROBOFLOW_CLASSIFY_URL =
     `https://classify.roboflow.com/${ROBOFLOW_MODEL}/${ROBOFLOW_VERSION}?api_key=${ROBOFLOW_API_KEY}`;
-let currentLang = localStorage.getItem("qalamLang") || "en";
+let currentLang = localStorage.getItem("qalamLang") || "ar";
 let selectedFile = null;
 
 // ---------------------------------------------------------------------------

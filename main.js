@@ -161,7 +161,7 @@ const translations = {
 };
 
 // Current language state
-let currentLang = localStorage.getItem('qalamLang') || 'en';
+let currentLang = localStorage.getItem('qalamLang') || 'ar';
 
 // Function to switch language
 function switchLanguage(lang) {
