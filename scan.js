@@ -118,7 +118,10 @@ const calligraphyInfo = {
 // ---------------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------------
-const BACKEND_URL = "http://localhost:8000/classify";
+// Roboflow direct config (no backend needed — works on GitHub Pages)
+// ---------------------------------------------------------------------------
+const ROBOFLOW_API_KEY = "ITfUpuY5QO9WTBpcEXTh";
+const ROBOFLOW_WORKFLOW = "https://serverless.roboflow.com/devsm/workflows/detect-and-classify-3";
 let currentLang = localStorage.getItem("qalamLang") || "en";
 let selectedFile = null;
 
@@ -252,30 +255,75 @@ function showResultState(state) {
 }
 
 // ---------------------------------------------------------------------------
-// Analyze
+// Helpers
+// ---------------------------------------------------------------------------
+
+/** Convert a File object to a base64 data string */
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result.split(",")[1]); // strip data:...;base64,
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+/** Parse Roboflow workflow outputs to extract top class + confidence */
+function parseOutputs(data) {
+    const outputs = data.outputs ?? [];
+    const output = outputs[0] ?? data;
+
+    function extract(obj) {
+        if (!obj || typeof obj !== "object") return null;
+        if (obj.top) return { type: obj.top, confidence: obj.confidence ?? 0 };
+        if (obj.class_name) return { type: obj.class_name, confidence: obj.confidence ?? 0 };
+        if (obj.class) return { type: obj.class, confidence: obj.confidence ?? 0 };
+        if (Array.isArray(obj.predicted_classes) && obj.predicted_classes[0]) {
+            const top = obj.predicted_classes[0];
+            const conf = obj.predictions?.[top]?.confidence ?? 0;
+            return { type: top, confidence: conf };
+        }
+        for (const val of Object.values(obj)) {
+            const r = Array.isArray(val)
+                ? val.map(extract).find(Boolean)
+                : extract(val);
+            if (r) return r;
+        }
+        return null;
+    }
+
+    return extract(output) ?? { type: "Unknown", confidence: 0 };
+}
+
+// ---------------------------------------------------------------------------
+// Analyze — calls Roboflow directly from the browser
 // ---------------------------------------------------------------------------
 analyzeBtn.addEventListener("click", async () => {
-    if (!selectedFile) {
-        showError(t("scan_error_no_file"));
-        return;
-    }
+    if (!selectedFile) { showError(t("scan_error_no_file")); return; }
 
     showResultState("loading");
     analyzeBtn.disabled = true;
 
-    const formData = new FormData();
-    formData.append("file", selectedFile);
-
     try {
-        const res = await fetch(BACKEND_URL, { method: "POST", body: formData });
+        const base64 = await fileToBase64(selectedFile);
+
+        const res = await fetch(ROBOFLOW_WORKFLOW, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                api_key: ROBOFLOW_API_KEY,
+                inputs: { image: { type: "base64", value: base64 } }
+            })
+        });
 
         if (!res.ok) {
-            const err = await res.json().catch(() => ({ detail: t("scan_error_generic") }));
-            throw new Error(err.detail || t("scan_error_generic"));
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.message ?? `Roboflow error ${res.status}`);
         }
 
         const data = await res.json();
-        showSuccess(data.type, data.confidence);
+        const result = parseOutputs(data);
+        showSuccess(result.type, result.confidence);
 
     } catch (err) {
         showError(err.message || t("scan_error_server"));
