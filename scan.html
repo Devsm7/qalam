@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebr AI - Arabic Calligraphy Scanner | Qalam</title>
+    <meta name="description"
+        content="Upload any Arabic calligraphy image and let Hebr AI identify the style instantly. Powered by Roboflow classification.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="Qalam Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#vision" data-i18n="nav_vision">Vision</a></li>
+                <li><a href="index.html#features" data-i18n="nav_features">What We Do</a></li>
+                <li><a href="index.html#unique" data-i18n="nav_unique">Why Qalam</a></li>
+                <li><a href="index.html#team" data-i18n="nav_team">Team</a></li>
+                <li><a href="scan.html" class="btn-primary active-link" data-i18n="nav_scan">Try Hebr AI</a></li>
+                <li>
+                    <button id="language-toggle" class="language-btn" aria-label="Switch Language">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+                        </svg>
+                        <span id="lang-text">عربي</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="scan-hero">
+        <div class="container scan-hero-content">
+            <span class="subtitle fade-in-up" data-i18n="scan_hero_sub">Hebr AI</span>
+            <h1 class="fade-in-up delay-1" data-i18n="scan_hero_title">Arabic Calligraphy Scanner</h1>
+            <p class="fade-in-up delay-2" data-i18n="scan_hero_desc">Upload any calligraphy image and let our AI
+                identify the style, type, and its cultural heritage.</p>
+        </div>
+    </header>
+
+    <!-- Main Scanner Section -->
+    <main class="scan-main">
+        <div class="container scan-layout">
+
+            <!-- Upload Card -->
+            <div class="scan-card upload-card fade-in-up">
+                <div id="upload-zone" class="upload-zone" role="button" tabindex="0"
+                    aria-label="Upload calligraphy image">
+                    <div class="upload-icon">✦</div>
+                    <p class="upload-title" data-i18n="scan_upload_title">Drop your image here</p>
+                    <p class="upload-sub" data-i18n="scan_upload_sub">or click to browse</p>
+                    <p class="upload-types">JPG, PNG, WEBP · Max 10 MB</p>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                </div>
+
+                <!-- Preview -->
+                <div id="preview-container" class="preview-container hidden">
+                    <img id="preview-img" class="preview-img" alt="Uploaded calligraphy preview">
+                    <button id="clear-btn" class="clear-btn" aria-label="Remove image" data-i18n="scan_clear">✕
+                        Remove</button>
+                </div>
+
+                <button id="analyze-btn" class="analyze-btn" disabled data-i18n="scan_analyze_btn">
+                    Analyze Image
+                </button>
+            </div>
+
+            <!-- Result Card -->
+            <div id="result-section" class="scan-card result-card hidden">
+                <!-- Idle state -->
+                <div id="result-idle" class="result-idle">
+                    <div class="idle-icon">🖋️</div>
+                    <p data-i18n="scan_result_idle">Your analysis result will appear here</p>
+                </div>
+
+                <!-- Loading state -->
+                <div id="result-loading" class="result-loading hidden">
+                    <div class="spinner"></div>
+                    <p data-i18n="scan_result_loading">Analyzing your calligraphy…</p>
+                </div>
+
+                <!-- Error state -->
+                <div id="result-error" class="result-error hidden">
+                    <div class="error-icon">⚠️</div>
+                    <p id="error-message"></p>
+                    <button id="retry-btn" class="clear-btn" data-i18n="scan_retry">Try Again</button>
+                </div>
+
+                <!-- Success state -->
+                <div id="result-success" class="result-success hidden">
+                    <div class="result-badge">
+                        <span class="result-type-label" data-i18n="scan_result_type_label">Script Type</span>
+                        <h2 id="result-type-name" class="result-type-name">—</h2>
+                        <span id="result-type-ar" class="result-type-ar">—</span>
+                    </div>
+
+                    <div class="confidence-bar-wrap">
+                        <div class="confidence-label">
+                            <span data-i18n="scan_confidence">Confidence</span>
+                            <span id="confidence-pct" class="confidence-pct">0%</span>
+                        </div>
+                        <div class="confidence-track">
+                            <div id="confidence-fill" class="confidence-fill" style="width:0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="description-block">
+                        <h3 class="desc-heading" data-i18n="scan_about_title">About this Script</h3>
+                        <p id="result-description" class="desc-text">—</p>
+                    </div>
+
+                    <div class="result-tags" id="result-tags"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.jpg" alt="Qalam Logo">
+                <p data-i18n="footer_tagline">Where artistry, technology, and community come together to keep the pen
+                    alive.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer_quick_links">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#vision" data-i18n="footer_link_vision">Vision</a></li>
+                    <li><a href="index.html#features" data-i18n="footer_link_features">Features</a></li>
+                    <li><a href="index.html#team" data-i18n="footer_link_team">Team</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer_copyright">© 2025 Qalam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scan.js"></script>
+</body>
+
+</html>
