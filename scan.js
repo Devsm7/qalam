@@ -45,7 +45,7 @@ const scanTranslations = {
         scan_hero_sub: "حِبر AI",
         scan_hero_title: "محلل الخط العربي",
         scan_hero_desc: "ارفع أي صورة خط عربي ودع الذكاء الاصطناعي يحدد النوع والأسلوب وتراثه الثقافي.",
-        scan_upload_title: "أفلت صورتك هنا",
+        scan_upload_title: "ارفع صورتك هنا",
         scan_upload_sub: "أو انقر للتصفح",
         scan_clear: "✕ إزالة",
         scan_analyze_btn: "تحليل الصورة",
