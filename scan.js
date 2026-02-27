@@ -118,10 +118,13 @@ const calligraphyInfo = {
 // ---------------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------------
-// Roboflow direct config (no backend needed — works on GitHub Pages)
+// Roboflow Hosted Classification API — supports CORS from browsers
 // ---------------------------------------------------------------------------
 const ROBOFLOW_API_KEY = "ITfUpuY5QO9WTBpcEXTh";
-const ROBOFLOW_WORKFLOW = "https://serverless.roboflow.com/devsm/workflows/detect-and-classify-3";
+const ROBOFLOW_MODEL = "khatclass";
+const ROBOFLOW_VERSION = "1";
+const ROBOFLOW_CLASSIFY_URL =
+    `https://classify.roboflow.com/${ROBOFLOW_MODEL}/${ROBOFLOW_VERSION}?api_key=${ROBOFLOW_API_KEY}`;
 let currentLang = localStorage.getItem("qalamLang") || "en";
 let selectedFile = null;
 
@@ -307,13 +310,11 @@ analyzeBtn.addEventListener("click", async () => {
     try {
         const base64 = await fileToBase64(selectedFile);
 
-        const res = await fetch(ROBOFLOW_WORKFLOW, {
+        // Roboflow hosted classification API — send base64 as URL-encoded body
+        const res = await fetch(ROBOFLOW_CLASSIFY_URL, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                api_key: ROBOFLOW_API_KEY,
-                inputs: { image: { type: "base64", value: base64 } }
-            })
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: base64
         });
 
         if (!res.ok) {
@@ -321,9 +322,11 @@ analyzeBtn.addEventListener("click", async () => {
             throw new Error(err.message ?? `Roboflow error ${res.status}`);
         }
 
+        // Response: { top: "thuluth", confidence: 0.92, predictions: [...] }
         const data = await res.json();
-        const result = parseOutputs(data);
-        showSuccess(result.type, result.confidence);
+        const type = data.top ?? data.predicted_classes?.[0] ?? "Unknown";
+        const conf = data.confidence ?? 0;
+        showSuccess(type, conf);
 
     } catch (err) {
         showError(err.message || t("scan_error_server"));
