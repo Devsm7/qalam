@@ -4,6 +4,7 @@ const translations = {
         // Navigation
         nav_vision: "Vision",
         nav_features: "What We Do",
+        nav_game: "Play Game",
         nav_unique: "Why Qalam",
         nav_team: "Team",
         nav_scan: "Try Hebr AI",
@@ -40,6 +41,12 @@ const translations = {
         feature3_text: "Whether you are a beginner or a master, Qalam is your home. Explore styles, connect with artists.",
         feature3_list1: "Explore Styles",
         feature3_list2: "Engage with Artists",
+
+        // Game Section
+        game_subtitle: "Interactive Experience",
+        game_title: "Discover Calligraphy Through Play",
+        game_text: "Test your knowledge of Arabic calligraphy styles in our new interactive game.",
+        game_btn_play: "Play Now",
 
         // Unique Section
         unique_title: "Why Qalam Is Unique",
@@ -83,6 +90,7 @@ const translations = {
         // Navigation
         nav_vision: "الرؤية",
         nav_features: "ما نقدمه",
+        nav_game: "العب وتعلم",
         nav_unique: "لماذا قلم",
         nav_team: "الفريق",
         nav_scan: "جرّب حِبر AI",
@@ -119,6 +127,12 @@ const translations = {
         feature3_text: "سواء كنت مبتدئاً أو خبيراً، قلم هو موطنك. استكشف الأساليب، وتواصل مع الفنانين.",
         feature3_list1: "استكشف الأساليب",
         feature3_list2: "تفاعل مع الفنانين",
+
+        // Game Section
+        game_subtitle: "تجربة تفاعلية",
+        game_title: "اكتشف الخط العربي من خلال اللعب",
+        game_text: "اختبر معرفتك بأساليب الخط العربي في لعبتنا التفاعلية الجديدة.",
+        game_btn_play: "العب الآن",
 
         // Unique Section
         unique_title: "لماذا منصة قلم فريدة",
@@ -231,6 +245,7 @@ function applyTranslations(lang) {
     updateText('[data-i18n="game_subtitle"]', t.game_subtitle);
     updateText('[data-i18n="game_title"]', t.game_title);
     updateText('[data-i18n="game_text"]', t.game_text);
+    updateText('[data-i18n="game_btn_play"]', t.game_btn_play);
 
     // Unique Section
     updateText('[data-i18n="unique_title"]', t.unique_title);
