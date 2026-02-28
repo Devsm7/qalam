@@ -6,6 +6,7 @@ const translations = {
         nav_features: "What We Do",
         nav_unique: "Why Qalam",
         nav_team: "Team",
+        nav_scan: "Try Hebr AI",
         nav_download: "Download App",
 
         // Hero Section
@@ -84,6 +85,7 @@ const translations = {
         nav_features: "ما نقدمه",
         nav_unique: "لماذا قلم",
         nav_team: "الفريق",
+        nav_scan: "جرّب حِبر AI",
         nav_download: "تحميل التطبيق",
 
         // Hero Section
@@ -159,7 +161,7 @@ const translations = {
 };
 
 // Current language state
-let currentLang = localStorage.getItem('qalamLang') || 'en';
+let currentLang = localStorage.getItem('qalamLang') || 'ar';
 
 // Function to switch language
 function switchLanguage(lang) {
@@ -189,6 +191,7 @@ function applyTranslations(lang) {
     updateText('[data-i18n="nav_features"]', t.nav_features);
     updateText('[data-i18n="nav_unique"]', t.nav_unique);
     updateText('[data-i18n="nav_team"]', t.nav_team);
+    updateText('[data-i18n="nav_scan"]', t.nav_scan);
     updateText('[data-i18n="nav_download"]', t.nav_download);
 
     // Hero Section
