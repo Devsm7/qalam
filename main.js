@@ -223,6 +223,12 @@ function applyTranslations(lang) {
     updateText('[data-i18n="feature3_list1"]', t.feature3_list1);
     updateText('[data-i18n="feature3_list2"]', t.feature3_list2);
 
+    // Game Section
+    updateText('[data-i18n="nav_game"]', t.nav_game);
+    updateText('[data-i18n="game_subtitle"]', t.game_subtitle);
+    updateText('[data-i18n="game_title"]', t.game_title);
+    updateText('[data-i18n="game_text"]', t.game_text);
+
     // Unique Section
     updateText('[data-i18n="unique_title"]', t.unique_title);
     updateText('[data-i18n="unique_text"]', t.unique_text);
@@ -340,4 +346,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Game Modal Logic
+    const gameModal = document.getElementById('game-modal');
+    const openGameBtn = document.getElementById('open-game-btn');
+    const closeGameBtn = document.getElementById('close-game-btn');
+    const gameIframe = document.getElementById('game-iframe');
+
+    if (gameModal && openGameBtn && closeGameBtn) {
+        // Open Modal
+        openGameBtn.addEventListener('click', () => {
+            gameModal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Close Modal via Button
+        closeGameBtn.addEventListener('click', closeGameModal);
+
+        // Close Modal by Clicking Outside Content
+        gameModal.addEventListener('click', (e) => {
+            if (e.target === gameModal) {
+                closeGameModal();
+            }
+        });
+
+        // Handle Escape Key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && gameModal.classList.contains('show')) {
+                closeGameModal();
+            }
+        });
+
+        function closeGameModal() {
+            gameModal.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
+
+            // Reload the iframe source to stop background music from continuing
+            if (gameIframe) {
+                const src = gameIframe.src;
+                gameIframe.src = '';
+                gameIframe.src = src;
+            }
+        }
+    }
 });

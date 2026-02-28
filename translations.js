@@ -1,9 +1,9 @@
 // Translation data for English and Arabic
 const translations = {
     en: {
-        // Navigation
         nav_vision: "Vision",
         nav_features: "What We Do",
+        nav_game: "Play Game",
         nav_unique: "Why Qalam",
         nav_team: "Team",
         nav_download: "Download App",
@@ -35,10 +35,14 @@ const translations = {
         feature2_text: "A dedicated space for calligraphers to thrive. Sell your masterpieces, showcase your portfolio, and receive custom commissions from admirers.",
         feature2_list1: "Sell High-Res Artwork",
         feature2_list2: "Portfolio Showcase",
-        feature3_title: "Community",
         feature3_text: "Whether you are a beginner or a master, Qalam is your home. Explore styles, connect with artists.",
         feature3_list1: "Explore Styles",
         feature3_list2: "Engage with Artists",
+
+        // Game Section
+        game_subtitle: "Interactive Experience",
+        game_title: "Discover Calligraphy Through Play",
+        game_text: "Test your knowledge of Arabic calligraphy styles in our new interactive game.",
 
         // Unique Section
         unique_title: "Why Qalam Is Unique",
@@ -72,9 +76,9 @@ const translations = {
         footer_link_team: "Team",
     },
     ar: {
-        // Navigation
         nav_vision: "الرؤية",
         nav_features: "ما نقدمه",
+        nav_game: "العب وتعلم",
         nav_unique: "لماذا قلم",
         nav_team: "الفريق",
         nav_download: "تحميل التطبيق",
@@ -106,10 +110,14 @@ const translations = {
         feature2_text: "مساحة مخصصة للخطاطين للازدهار. بيع روائعك، وعرض محفظتك، واستقبال طلبات مخصصة من المعجبين.",
         feature2_list1: "بيع الأعمال الفنية عالية الدقة",
         feature2_list2: "عرض المحفظة",
-        feature3_title: "المجتمع",
         feature3_text: "سواء كنت مبتدئاً أو خبيراً، قلم هو موطنك. استكشف الأساليب، وتواصل مع الفنانين.",
         feature3_list1: "استكشف الأساليب",
         feature3_list2: "تفاعل مع الفنانين",
+
+        // Game Section
+        game_subtitle: "تجربة تفاعلية",
+        game_title: "اكتشف الخط العربي من خلال اللعب",
+        game_text: "اختبر معرفتك بأساليب الخط العربي في لعبتنا التفاعلية الجديدة.",
 
         // Unique Section
         unique_title: "لماذا منصة قلم فريدة",

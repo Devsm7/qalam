@@ -24,6 +24,7 @@
             <ul class="nav-links">
                 <li><a href="#vision" data-i18n="nav_vision">Vision</a></li>
                 <li><a href="#features" data-i18n="nav_features">What We Do</a></li>
+                <li><a href="#game" data-i18n="nav_game">Play Game</a></li>
                 <li><a href="#unique" data-i18n="nav_unique">Why Qalam</a></li>
                 <li><a href="#team" data-i18n="nav_team">Team</a></li>
                 <li><a href="#download" class="btn-primary" data-i18n="nav_download">Download App</a></li>
@@ -123,6 +124,23 @@
                 </div>
                 <div class="feature-image scroll-reveal-left">
                     <img src="assets/community_mk.png" alt="Community Feed">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game" class="game-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle" data-i18n="game_subtitle">Interactive Experience</span>
+                <h2 data-i18n="game_title">Discover Calligraphy Through Play</h2>
+                <p class="game-text scroll-reveal-up" data-i18n="game_text">Test your knowledge of Arabic calligraphy
+                    styles in our new interactive game.</p>
+                <div class="scroll-reveal-up delay-1">
+                    <button id="open-game-btn" class="btn-primary game-btn">
+                        <span class="icon">🎮</span>
+                        <span data-i18n="game_btn_play">Play Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -294,6 +312,17 @@
             <p data-i18n="footer_copyright">© 2025 Qalam. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Game Modal Overlay -->
+    <div id="game-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-game-btn" class="close-modal-btn" aria-label="Close Game">&times;</button>
+            <div class="game-container">
+                <iframe id="game-iframe" src="https://web-rose-nu-20.vercel.app" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
